@@ -1,0 +1,17 @@
+---------------Common Table Expression--------------
+with xx1 as (
+              select user_id, order_id,status
+              from trades
+            ),
+      xx2 as (
+                select city, user_id
+                from users
+      )
+      
+      select city, count(order_id) total_orders from xx1
+      join xx2 
+      on xx1.user_id = xx2.user_id
+     where xx1.status in ('Completed')
+      group by city
+      order by total_orders DESC
+      limit 3
