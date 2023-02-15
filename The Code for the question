@@ -1,4 +1,8 @@
----------------Common Table Expression--------------
+-----------------------QUESTION------------------------------
+You are given the tables below containing information on Robinhood trades and users. Write a query to list the top three cities that have the most completed trade orders in descending order.
+Output the city and number of orders.
+
+---------------Answer with Common Table Expression--------------
 with xx1 as (
               select user_id, order_id,status
               from trades
